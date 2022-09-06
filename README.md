@@ -16,9 +16,8 @@ The server only supports one of the TLS cipher suites on [TLS Cipher Suite Regis
 | Encryption     | AES 128 CBC                      |
 | Hash           | SHA1                             |
 
-Note: CBC and SHA1 has been proven to be vulnerable/insecure
+Note: CBC and SHA1 has been proven to be vulnerable/insecure. Therefore, this cipher is weak and not recommended for use.
 
-### TLS Steps:
-1. client -> server: Hello / Key share
-2. server -> client: Key share / Certificate / Finished
-3. client <-> server: encrypted communication
+### Smple TLS 1.2 Steps:
+1. Hello
+

@@ -1,16 +1,24 @@
-# Simple TLS 1.3
+# Simple TLS 1.2
 
 ## Description
-Custom simple TLS implementation in python
+Custom simple TLS implementation in python. The implementation of TLS 1.2 was based on [The Illustrated TLS 1.2 Connection](https://tls12.xargs.org/). To simplify, only 1 cipher suite is supported, and the certificate of the server is not verified.
 
 ## Overview
-Cipher suite used:
-- key exchange algorihtm: Diffie–Hellman key exchange
-- signiture algorithm to sign certificates: SHA3-256
-- symmetric encryption algorithm: AES-128 CBC
-- HMAC algorithm: HMAC SHA-1
+### Supported TLS Cipher Suite
+The server only supports one of the TLS cipher suites on [TLS Cipher Suite Registry](https://www.iana.org/assignments/tls-parameters/tls-parameters.xhtml#tls-parameters-4).
 
-TLS Steps:
+|                |                                  |
+|----------------|----------------------------------|
+| IANA Name      | TLS_DHE_RSA_WITH_AES_128_CBC_SHA |
+| Hex Code       | 0x00, 0x33                       |
+| Key Exchange   | DHE                              |
+| Authentication | RSA                              |
+| Encryption     | AES 128 CBC                      |
+| Hash           | SHA1                             |
+
+Note: CBC and SHA1 has been proven to be vulnerable/insecure
+
+### TLS Steps:
 1. client -> server: Hello / Key share
 2. server -> client: Key share / Certificate / Finished
 3. client <-> server: encrypted communication

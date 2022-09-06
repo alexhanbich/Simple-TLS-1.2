@@ -1,7 +1,7 @@
-# TLS from scratch
+# Simple TLS 1.3
 
 ## Description
-custom mini TLS implementation in python
+Custom simple TLS implementation in python
 
 ## Overview
 Cipher suite used:
